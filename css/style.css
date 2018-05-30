@@ -1,0 +1,188 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+			box-sizing: border-box;
+	transition: all .1s ease-in;
+	text-decoration: none;
+	/*text-decoration: если прописывать просто в body то не применяется*/
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #F1F1F1;
+}
+
+header {
+	padding-top: 40px;
+}
+
+section {
+	display: inline-block;
+}
+
+form {
+	margin: 0 auto;
+	position: relative;
+	width: 80%;
+}
+
+.search-input {
+	width: 100%;
+	padding: 0 80px 0 10px;
+	font-weight: 700;
+	border: none;
+	background: transparent;
+	font-size: 7em;
+	color: #ec5a62;
+}
+
+/* placeholder,  хз почему так, скопировал из проэкта, поскольку долго мучался*/
+.search-input::-webkit-input-placeholder {
+	color: #c2c2c2;
+}
+
+.search-input:focus,
+.search-submit:focus {
+	outline: none;
+}
+
+.search-input:focus {
+	border: 0.5px solid red;
+}
+
+.search-submit {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	text-indent: 100px;
+	overflow: hidden;
+	right: 5%;
+	top: 50%;
+	background: transparent url(../img/favicon.png) no-repeat center center;
+	background-size: 100%;
+	border: none;
+	transform-origin: 100% 50%;
+	-webkit-transform: translate3d(0,-50%,0) scale(1);
+	transform: translate3d(0,-50%,0) scale(1);
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+.search-submit:hover,
+.search-submit:focus {
+	-webkit-transform: translate3d(0,-50%,0) scale(1.1);
+	transform: translate3d(0,-50%,0) scale(1.1);
+}
+
+.main-content {
+	padding: 3% 10%;
+}
+
+.title {
+	font-size: 1em;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 800;
+	color: #c2c2c2;
+	padding: 0 10%;
+	margin-left: -8px;
+}
+
+.list-people,
+.list-popular,
+.list-recent {
+	list-style-type: none;
+}
+
+[class*="list"] a {
+	display: inline-block;
+	margin: 5px 30px;
+	width: 330px;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	background: rgba(118,117,128,0.05);
+	color: rgba(145,145,145,0.7);
+}
+
+[class*="list"] h3 {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0.85em;
+	font-weight: 700;
+	margin: 0 0 0 0;
+	width: calc(100% - 70px);
+	color: inherit;
+}
+
+[class*="list"] img {
+	display: inline-block;
+	vertical-align: middle;
+	width: 50px;
+	margin: 0 10px 0 0;
+}
+
+.ava-circle {
+	border-radius: 50%;
+}
+
+[class*="list"] a:hover {
+	color: #EC5A62;
+}
+
+[class*="list"] a:hover,
+[class*="list"] a:focus {
+	background: rgba(118,117,128,0.1);
+}
+
+.checkbox {
+	position: absolute;
+	right: 2%;
+	top: 2%;
+}
+
+.checkbox-one {
+	position: absolute;
+	right: 99%;
+	top: 99%;
+}
+
+.secret-cat {
+	position: absolute;
+	top: 20%;
+	right: 10%;
+	color: lightgray;
+}
+
+.secret-jack {
+	position: absolute;
+	top: 20%;
+	right: 80%;
+}
+
+.secret-jack::before {
+	content: url(../img/jack.gif);
+	position: absolute;
+	border: 5px solid lightgray;
+}
+ 
+.secret-cat:hover {
+	background-image: url(../img/980x.gif);
+	width: 400px;
+	height: 250px;
+}
+
+.checkbox + .secret-cat,
+.checkbox-one + .secret-jack {
+	display: none;
+}
+
+.checkbox:checked + .secret-cat,
+.checkbox-one:checked + .secret-jack {
+	display: block;
+}
